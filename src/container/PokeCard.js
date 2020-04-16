@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import {Card, CardDeck} from 'react-bootstrap'
 
+const style = {
+    padding: 15,
+    width: 200,
+    height: 200,
+    align: 'center'
+}
+
 export default class PokeCard extends Component {
     constructor() {
         super() 
@@ -24,18 +31,17 @@ export default class PokeCard extends Component {
     }
 
     render() {
-        
         return (
             <div className="col-md-3 col-sm-6 mb-5">
                 <CardDeck>
-                    <Card>
-                        <Card.Img variant="top" src={this.state.imageUrl} />
+                    <Card border="secondary" bg="dark" text="light">
+                        <Card.Img variant="top" src={this.state.imageUrl} style={style}/>
                         <Card.Body>
                             <Card.Title>{this.state.name}</Card.Title>
-                            <Card.Text>
+                            {/* <Card.Text>
                                 This is a wider card with supporting text below as a natural lead-in to
                                 additional content. This content is a little bit longer.
-                            </Card.Text>
+                            </Card.Text> */}
                         </Card.Body>
                         <Card.Footer>
                             <small className="text-muted">{this.state.pokemonIndex}</small>
